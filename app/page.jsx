@@ -14,10 +14,16 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await login(username, password);
-    router.push("../register/");
+    router.push("/Principal/");
     //ver si tenemos que redirigir a otra pagina o mostrar un mensaje de error
   }
 
+    const handleSubmit2 = async (e) => {
+    e.preventDefault();
+    const data = await login(username, password);
+    router.push("/register/");
+    //ver si tenemos que redirigir a otra pagina o mostrar un mensaje de error
+  }
 
 
   return (
@@ -25,7 +31,7 @@ export default function Login() {
     <div className="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8 bg-gray-900">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="mt-10 text-center text-2xl font-bold text-white">
-          Ingresa a tu cuenta
+          Sign In to your account
         </h2>
       </div>
 
@@ -34,7 +40,7 @@ export default function Login() {
 
           <div>
             <label className="block text-sm font-medium text-gray-100">
-              Nombre de usuario
+              Username
             </label>
             <div className="mt-2">
               <input
@@ -51,7 +57,7 @@ export default function Login() {
 
           <div>
             <label className="block text-sm font-medium text-gray-100">
-              Contraseña
+              Password
             </label>
             <div className="mt-2">
               <input
@@ -72,7 +78,15 @@ export default function Login() {
               onClick={handleSubmit}
               className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400"
             >
-              Inicio de Sesión
+              Sign In
+            </button>
+            <br></br>
+            <button
+              type="button"
+              onClick={handleSubmit2}
+              className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400"
+            >
+              Sign Up
             </button>
           </div>
 
