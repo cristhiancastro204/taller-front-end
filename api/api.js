@@ -31,9 +31,23 @@ const login = async (username, password) => {
   return data;
 }
 
+const postLocal = async (name, type, priceRange , city, zone, address , hours , photos) =>{
+    const response = await fetch(`${BASE_URL}/api/locals`,{
+        method: "POST",
+        headers:{"Content-Type" : "application/json",
+            "Authorization" : `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify({name, type, priceRange , city, zone, address , hours , photos})
+    });
 
+    const data = await response.json();
+
+    console.log("Informacion del Local Creado", data);
+
+}
 
 export{
     register,
     login,
+    postLocal,
 }

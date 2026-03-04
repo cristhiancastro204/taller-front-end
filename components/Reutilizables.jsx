@@ -9,16 +9,18 @@ import Link from "next/link";
 const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/Principal', active: true },
-    { name: 'Discover', href: '/discover', active: false },
-    { name: 'Ratings', href: '/raitings', active: false },
-    { name: 'Account', href: '/profile', active: false },
+    { name: 'Discover', href: '/Discover', active: false },
+    { name: 'Ratings', href: '/Raitings', active: false },
+    { name: 'Account', href: '/Profile', active: false },
+    { name: 'Alta', href: '/Alta', active: false},
     { name: 'Log out', href: '/', active: false},
+
 
 
   ];
 
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-[#111827] text-white w-full border-b border-gray-800">
+    <nav className="relative z-50 flex items-center justify-between px-6 py-3 bg-[#111827] text-white w-full border-b border-gray-800">
       <div className="flex items-center space-x-10">
         {/* Logo */}
         <div className="flex-shrink-0">
